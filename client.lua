@@ -77,6 +77,10 @@ function StartInteractionAtObject(interaction)
 	local h = interaction.heading + objectHeading
 
 	ClearPedTasksImmediately(PlayerPedId())
+	
+	SetEntityCanBeDamaged(PlayerPedId(), false)
+        ClearEntityLastDamageEntity(PlayerPedId())
+        SetEntityOnlyDamagedByPlayer(PlayerPedId(), false)
 
 	FreezeEntityPosition(PlayerPedId(), true)
 
